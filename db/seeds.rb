@@ -14,10 +14,10 @@ Patient.destroy_all
 
 
 
-dr_manny = Doctor.create(name:"Manuel Manny", specialty:"Many, many things")
-dr_nick = Doctor.create(name:"Nick", specialty:"Whatcha got?")
-dr_house = Doctor.create(name:"Gregory House", specialty:"Nephrology")
-dr_gray = Doctor.create(name:"Meredith Grey", specialty:"General Surgery")
+dr_manny = Doctor.create(name:"Manuel Manny", specialty:"Yardwork")
+dr_nick = Doctor.create(name:"Nick", specialty:"Heart")
+dr_house = Doctor.create(name:"Gregory House", specialty:"Surgeon")
+dr_gray = Doctor.create(name:"Meredith Grey", specialty:"Hip Surgery")
 
 m_burns = Patient.create(name: "Montgomery Burns", age: 123, gender: "male")
 grace_hopper = Patient.create(name: "Grace Hopper", age: 109, gender:"female")
@@ -32,3 +32,17 @@ squanchy = Patient.create(name: "Squanchy", age: -12, gender:"squanchy_male")
 ada_lovelace = Patient.create(name: "Ada Lovelace", age: 200, gender:"female")
 
 # Add Appointments here
+appt1 = Appointment.create(doctor_id: dr_nick.id, patient_id: m_burns.id, ailment: "heart", appt_datetime: DateTime.current)
+appt2 = Appointment.create(doctor_id: dr_nick.id, patient_id: grace_hopper.id, ailment: "heart", appt_datetime: DateTime.current)
+appt3 = Appointment.create(doctor_id: dr_nick.id, patient_id: mr_bombastic.id, ailment: "heart", appt_datetime: DateTime.current)
+appt4 = Appointment.create(doctor_id: dr_manny.id, patient_id: elephant_man.id, ailment: "trim", appt_datetime: DateTime.current)
+appt5 = Appointment.create(doctor_id: dr_manny.id, patient_id: storm.id, ailment: "trim", appt_datetime: DateTime.current)
+appt6 = Appointment.create(doctor_id: dr_manny.id, patient_id: zoe.id, ailment: "trim", appt_datetime: DateTime.current)
+appt7 = Appointment.create(doctor_id: dr_house.id, patient_id: sansa.id, ailment: "surgery", appt_datetime: DateTime.current)
+appt8 = Appointment.create(doctor_id: dr_house.id, patient_id: sea_biscuit.id, ailment: "surgery", appt_datetime: DateTime.current)
+appt9 = Appointment.create(doctor_id: dr_house.id, patient_id: molly_millions.id, ailment: "surgery", appt_datetime: DateTime.current)
+appt10 = Appointment.create(doctor_id: dr_house.id, patient_id: squanchy.id, ailment: "surgery", appt_datetime: DateTime.current)
+appt11 = Appointment.create(doctor_id: dr_house.id, patient_id: ada_lovelace.id, ailment: "surgery", appt_datetime: DateTime.current)
+appt12 = Appointment.create(doctor_id: dr_gray.id, patient_id: m_burns.id, ailment: "hip", appt_datetime: DateTime.current)
+appt13 = Appointment.create(doctor_id: dr_gray.id, patient_id: grace_hopper.id, ailment: "hip", appt_datetime: DateTime.current)
+appt14 = Appointment.create(doctor_id: dr_gray.id, patient_id: ada_lovelace.id, ailment: "hip", appt_datetime: DateTime.current)

@@ -1,8 +1,18 @@
 <h1>Appointments for Dr. <%= @doctor.name %></h1>
-<h2> <%= link_to "All Doctors", doctors_path %> </h2>
-
 
 <h2> Specialty: <%= @doctor.specialty %> </h2>
-<%= link_to "Edit #{@doctor.name}", edit_doctor_path(@doctor)  %>
-<%= link_to "Fire #{@doctor.name}", doctor_path(@doctor),
-  method: :delete, data: {confirm: "Give unemployment?"}  %>
+
+  <% @appts.each do |x| %>
+  <p> <%= link_to @patients.find(x.patient_id).name, patient_path(x.patient_id) %></p>
+  <p>"Today at "<%= x.appt_datetime %> " for " <%= x.ailment %> </p>
+  <% end %>
+
+
+  <h2> <%= link_to "All Doctors", doctors_path %> </h2>
+  <br>
+  <br>
+  <%= link_to "Edit #{@doctor.name}", edit_doctor_path(@doctor)  %>
+  <br>
+  <%= link_to "Fire #{@doctor.name}", doctor_path(@doctor),
+    method: :delete, data: {confirm: "Give unemployment?"}  %>
+  <br>
